@@ -1,9 +1,20 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  orderBy,
+  serverTimestamp
+} from "firebase/firestore";
 
 
-const firebaseConfig = {
+const FirebaseConfig = {
   apiKey: "AIzaSyDVxRhp8EoAY3DZt3EmRvZ5i-6VEKzdYYM",
   authDomain: "chatbot-870f8.firebaseapp.com",
   projectId: "chatbot-870f8",
@@ -13,7 +24,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(FirebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
-export { auth };
+export { auth, db, doc, getDoc, setDoc, collection, addDoc, getDocs, query, orderBy, serverTimestamp };

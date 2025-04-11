@@ -1,21 +1,40 @@
 import React from 'react';
 import { View, TextInput, Image, TouchableOpacity, Text } from 'react-native';
 import styles from '../styles/AuthStyles';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-export const LoginInput = ({ placeholder, icon, secureTextEntry = false, value, onChangeText }) => (
+
+// Reusable Input Component
+export const LoginInput = ({ placeholder, iconName, secureTextEntry = false, value, onChangeText }) => (
   <View style={styles.inputContainer}>
-    <TextInput style={styles.input} placeholder={placeholder} secureTextEntry={secureTextEntry} value={value} onChangeText={onChangeText} />
-    <Image source={icon} style={styles.inputIcon} />
+    <Icon name={iconName} size={20} color="#999" style={styles.inputIcon} />
+    <TextInput
+      style={styles.input}
+      placeholder={placeholder}
+      placeholderTextColor="#999"
+      secureTextEntry={secureTextEntry}
+      value={value}
+      onChangeText={onChangeText}
+    />
   </View>
 );
 
+// Reusable Button Component
 export const LoginButton = ({ title, onPress, icon, variant = "primary" }) => (
-  <TouchableOpacity style={[styles.button, variant === "social" ? styles.socialButton : styles.primaryButton]} onPress={onPress}>
+  <TouchableOpacity
+    style={[styles.button, variant === "social" ? styles.socialButton : styles.primaryButton]}
+    onPress={onPress}
+  >
+  <View style = {styles.buttonContent}>
     {icon && <Image source={icon} style={styles.buttonIcon} />}
-    <Text style={[styles.buttonText, variant === "social" ? styles.socialButtonText : styles.primaryButtonText]}>{title}</Text>
+    <Text style={[styles.buttonText, variant === "social" ? styles.socialButtonText : styles.primaryButtonText]}>
+      {title}
+    </Text>
+  </View>
   </TouchableOpacity>
 );
 
+// Reusable Divider Component
 export const LoginDivider = () => (
   <View style={styles.dividerContainer}>
     <View style={styles.dividerLine} />
@@ -24,8 +43,11 @@ export const LoginDivider = () => (
   </View>
 );
 
+// Reusable Signup Link Component
 export const SignupLink = ({ onPress }) => (
   <TouchableOpacity onPress={onPress} style={styles.signupContainer}>
-    <Text style={styles.signupText}>Don't have an account? <Text style={styles.signupLink}>Sign up</Text> here</Text>
+    <Text style={styles.signupText}>
+      Don't have an account? <Text style={styles.signupLink}>Sign up</Text> here
+    </Text>
   </TouchableOpacity>
 );

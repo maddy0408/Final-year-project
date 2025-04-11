@@ -6,8 +6,9 @@ import { auth } from '../config/FirebaseConfig';
 import { LoginInput, LoginButton, LoginDivider, SignupLink } from '../components/AuthComponents';
 import styles from '../styles/AuthStyles';
 
+// Configure Google Sign-In
 GoogleSignin.configure({
-  webClientId: '720477462820-rtjjl9rebhbovl0bdsif1dq54crcu1a6.apps.googleusercontent.com',
+  webClientId: '706055356191-di670nf9fuvu40f507v1lc12b51pedpm.apps.googleusercontent.com',
 });
 
 const LoginScreen = ({ navigation }) => {
@@ -15,10 +16,17 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState('');
 
   const handleLogin = async () => {
+    if (!email || !password) {
+      Alert.alert('Error', 'Please enter both email and password.');
+      return;
+    }
+
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
       Alert.alert('Success', 'Logged in successfully!');
-      navigation.navigate('Dashboard');
+      navigation.navigate('Dashboard', { userId: user.uid }); // Pass userId to Dashboard
     } catch (error) {
       Alert.alert('Error', error.message);
     }
@@ -26,12 +34,19 @@ const LoginScreen = ({ navigation }) => {
 
   const handleGoogleLogin = async () => {
     try {
+      // Check if Google Play Services is available
       await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+
+      // Sign in with Google
       const { idToken } = await GoogleSignin.signIn();
       const credential = GoogleAuthProvider.credential(idToken);
-      await signInWithCredential(auth, credential);
+
+      // Sign in to Firebase with Google credentials
+      const userCredential = await signInWithCredential(auth, credential);
+      const user = userCredential.user;
+
       Alert.alert('Success', 'Google Sign-in successful!');
-      navigation.navigate('Dashboard');
+      navigation.navigate('Dashboard', { userId: user.uid }); // Pass userId to Dashboard
     } catch (error) {
       Alert.alert('Error', error.message);
     }
@@ -41,13 +56,39 @@ const LoginScreen = ({ navigation }) => {
     <View style={styles.container}>
       <Text style={styles.header}>Login</Text>
 
-      <LoginInput placeholder="Email" icon={require('../../assets/icons/mail1.png')} value={email} onChangeText={setEmail} />
-      <LoginInput placeholder="Password" icon={require('../../assets/icons/lock4.png')} secureTextEntry value={password} onChangeText={setPassword} />
+      {/* Email Input */}
+      <LoginInput
+        placeholder="Email"
+        iconName="envelope"
+        value={email}
+        onChangeText={setEmail}
+        keyboardType="email-address"
+      />
 
+      {/* Password Input */}
+      <LoginInput
+        placeholder="Password"
+        iconName="lock"
+        secureTextEntry
+        value={password}
+        onChangeText={setPassword}
+      />
+
+      {/* Login Button */}
       <LoginButton title="Login" onPress={handleLogin} />
-      <LoginDivider />
-      <LoginButton title="Continue with Google" icon={require('../../assets/icons/google.png')} onPress={handleGoogleLogin} variant="social" />
 
+      {/* Divider */}
+      <LoginDivider />
+
+      {/* Google Sign-In Button */}
+      <LoginButton
+        title="Continue with Google"
+        icon={require('../../assets/icons/google.png')}
+        onPress={handleGoogleLogin}
+        variant="social"
+      />
+
+      {/* Signup Link */}
       <SignupLink onPress={() => navigation.navigate('Signup')} />
     </View>
   );

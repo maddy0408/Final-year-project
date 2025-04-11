@@ -11,6 +11,14 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		CB1CBD9322474E9FA5B9EDC1 /* Zain-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0DFF87A09FC4A65989C75D1 /* Zain-Black.ttf */; };
+		984652B3196D4D809B52112E /* Zain-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AEB1615FAFB4DBB8A3F4370 /* Zain-Bold.ttf */; };
+		58C4976C62D5466BB9204B64 /* Zain-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09AB7EF9F20945A293238A23 /* Zain-ExtraBold.ttf */; };
+		8DB2E23E9B3C4CA49AD6760C /* Zain-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C222556E1D2244D1BE20C610 /* Zain-ExtraLight.ttf */; };
+		E35581E250344ACD819539C0 /* Zain-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C71F977DF8A4A92B755C930 /* Zain-Italic.ttf */; };
+		91947A842C7647E98A57E838 /* Zain-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D59DE811E3A14A59B915E123 /* Zain-Light.ttf */; };
+		261739B1A02043ABB4991142 /* Zain-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EFDCE56F8C44AA292958791 /* Zain-LightItalic.ttf */; };
+		3AA4F2C868314D3D9447DB6A /* Zain-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20170B9F75034985B5A7C215 /* Zain-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +43,14 @@
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Assistant/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Assistant/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		C0DFF87A09FC4A65989C75D1 /* Zain-Black.ttf */ = {isa = PBXFileReference; name = "Zain-Black.ttf"; path = "../assets/fonts/Zain-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4AEB1615FAFB4DBB8A3F4370 /* Zain-Bold.ttf */ = {isa = PBXFileReference; name = "Zain-Bold.ttf"; path = "../assets/fonts/Zain-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		09AB7EF9F20945A293238A23 /* Zain-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Zain-ExtraBold.ttf"; path = "../assets/fonts/Zain-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C222556E1D2244D1BE20C610 /* Zain-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Zain-ExtraLight.ttf"; path = "../assets/fonts/Zain-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6C71F977DF8A4A92B755C930 /* Zain-Italic.ttf */ = {isa = PBXFileReference; name = "Zain-Italic.ttf"; path = "../assets/fonts/Zain-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D59DE811E3A14A59B915E123 /* Zain-Light.ttf */ = {isa = PBXFileReference; name = "Zain-Light.ttf"; path = "../assets/fonts/Zain-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7EFDCE56F8C44AA292958791 /* Zain-LightItalic.ttf */ = {isa = PBXFileReference; name = "Zain-LightItalic.ttf"; path = "../assets/fonts/Zain-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		20170B9F75034985B5A7C215 /* Zain-Regular.ttf */ = {isa = PBXFileReference; name = "Zain-Regular.ttf"; path = "../assets/fonts/Zain-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +109,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				B42C1719D8664E3498D13793 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -115,6 +132,22 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		B42C1719D8664E3498D13793 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				C0DFF87A09FC4A65989C75D1 /* Zain-Black.ttf */,
+				4AEB1615FAFB4DBB8A3F4370 /* Zain-Bold.ttf */,
+				09AB7EF9F20945A293238A23 /* Zain-ExtraBold.ttf */,
+				C222556E1D2244D1BE20C610 /* Zain-ExtraLight.ttf */,
+				6C71F977DF8A4A92B755C930 /* Zain-Italic.ttf */,
+				D59DE811E3A14A59B915E123 /* Zain-Light.ttf */,
+				7EFDCE56F8C44AA292958791 /* Zain-LightItalic.ttf */,
+				20170B9F75034985B5A7C215 /* Zain-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -185,6 +218,14 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				CB1CBD9322474E9FA5B9EDC1 /* Zain-Black.ttf in Resources */,
+				984652B3196D4D809B52112E /* Zain-Bold.ttf in Resources */,
+				58C4976C62D5466BB9204B64 /* Zain-ExtraBold.ttf in Resources */,
+				8DB2E23E9B3C4CA49AD6760C /* Zain-ExtraLight.ttf in Resources */,
+				E35581E250344ACD819539C0 /* Zain-Italic.ttf in Resources */,
+				91947A842C7647E98A57E838 /* Zain-Light.ttf in Resources */,
+				261739B1A02043ABB4991142 /* Zain-LightItalic.ttf in Resources */,
+				3AA4F2C868314D3D9447DB6A /* Zain-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

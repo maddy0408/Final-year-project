@@ -1,9 +1,7 @@
 apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
-apply plugin: 'com.google.gms.google-services'
-apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
-
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
 /**
  * This is the configuration block to customize your React Native Android app.
@@ -80,6 +78,12 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
+    // Add dexOptions for better build performance
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries true
+    }
+
     namespace "com.assistant"
     defaultConfig {
         applicationId "com.assistant"
@@ -100,6 +104,9 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            // Speed up debug builds
+            minifyEnabled false
+            shrinkResources false
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
@@ -107,6 +114,21 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
+    // Disable resource validation
+    aaptOptions {
+        cruncherEnabled = false
+    }
+
+    // Configure only necessary ABIs
+    splits {
+        abi {
+            enable true
+            reset()
+            include "armeabi-v7a", "arm64-v8a"
+            universalApk false
         }
     }
 }
@@ -122,3 +144,4 @@ dependencies {
         implementation jscFlavor
     }
 }
+apply plugin: 'com.google.gms.google-services'

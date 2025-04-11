@@ -5,6 +5,7 @@ import LoginScreen from '../screens/LoginScreen';
 import SignupScreen from '../screens/SignupScreen';
 import DashboardScreen from '../screens/DashboardScreen';
 
+// Create a stack navigator
 const Stack = createStackNavigator();
 
 const AppNavigator = () => (
